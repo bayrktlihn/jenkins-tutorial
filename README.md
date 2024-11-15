@@ -2,6 +2,7 @@
 - Pipeline: Stage View
 - GitHub
 - Maven Integration
+- Config File Provider
 
 # Important Environments
 - BUILD_ID
