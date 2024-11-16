@@ -11,6 +11,8 @@
 - STAGE_NAME
 - WORKSPACE
 - BRANCH_NAME
+- NODE_NAME
+- NODE_LABELS
 
 # Command Examples
 - git url: "https://github.com/bayrktlihn/jenkins-tutorial.git", branch: "main"
