@@ -11,3 +11,13 @@
 - STAGE_NAME
 - WORKSPACE
 - BRANCH_NAME
+
+# Command Examples
+- git url: "https://github.com/bayrktlihn/jenkins-tutorial.git", branch: "main"
+- sh 'set'
+- sh 'ssh -p por_number user@sunucu_ip_adresi'
+- ```withCredentials([usernamePassword(credentialsId: 'your_credentials_id', usernameVariable: 'your_username_variable_name', passwordVariable: 'your_password_variable_name')]){
+your_codes
+}
+```
+
