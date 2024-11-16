@@ -3,6 +3,7 @@
 - GitHub
 - Maven Integration
 - Config File Provider
+- Role-based Authorization StrategyVersion
 
 # Important Environments
 - BUILD_ID
