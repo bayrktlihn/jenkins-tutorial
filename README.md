@@ -4,6 +4,7 @@
 - Maven Integration
 - Config File Provider
 - Role-based Authorization StrategyVersion
+- Publish Over SSH
 
 # Important Environments
 - BUILD_ID
