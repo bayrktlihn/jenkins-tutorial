@@ -5,6 +5,7 @@
 - Config File Provider
 - Role-based Authorization StrategyVersion
 - Publish Over SSH
+- Docker Pipeline
 
 # Important Environments
 - BUILD_ID
