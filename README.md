@@ -24,3 +24,7 @@
 - withCredentials([usernamePassword(credentialsId: 'your_credentials_id', usernameVariable: 'your_username_variable_name', passwordVariable: 'your_password_variable_name')]){ your_codes }
 - configFileProvider([configFile(fileId: 'your_file_id', variable: 'your_variable_name')]) { sh 'cat $myFile' }
 
+# Install Linux Command
+- apt install iputils-ping
+- apt install wget
+
