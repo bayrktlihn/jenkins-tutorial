@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    
+    tools{
+        maven 'maven3_9_9'
+    }
+
+    stages {
+        
+        stage('checkout'){
+            steps{
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gitlab', url: 'http://gitlab/root/my-java-project.git']])
+            }
+        }
+        
+        stage('Hello') {
+            steps {
+                sh 'mvn --version';
+                sh 'docker container ls';
+                sh 'docker --version';
+                sh 'printenv';
+                sh 'echo $JENKINS_HOME';
+                sh 'echo $BUILD_ID $BUILD_NUMBER $JOB_NAME $STAGE_NAME $WORKSPACE $NODE_NAME $NODE_LABELS';
+                sh 'ls -al'
+                
+                withCredentials([usernamePassword(credentialsId: 'bayrktlihn', usernameVariable: 'myUserName', passwordVariable: 'myPassword')]){ 
+                    
+                    sh 'echo $myUserName $myPassword';
+                    
+                }
+                
+                configFileProvider([configFile(fileId: 'ca16fca9-99ce-4c52-ad72-f930f179176f', variable: 'myFile')]) {
+                    sh 'cat $myFile'
+                }
+            }
+        }
+    }
+}
