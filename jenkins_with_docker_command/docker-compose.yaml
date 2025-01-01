@@ -1,0 +1,19 @@
+services:
+  jenkins:
+    container_name: jenkins
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    group_add:
+      - "0"
+    volumes:
+      - type: bind
+        source: ./JENKINS_DATA
+        target: /var/jenkins_home
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+
