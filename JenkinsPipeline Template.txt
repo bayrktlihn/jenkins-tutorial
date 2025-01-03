@@ -22,7 +22,13 @@ pipeline {
                 sh 'echo $JENKINS_HOME';
                 sh 'echo $BUILD_ID $BUILD_NUMBER $JOB_NAME $STAGE_NAME $WORKSPACE $NODE_NAME $NODE_LABELS';
                 sh 'ls -al'
-                
+
+                dir('folder_path') {
+                    sh 'ls -al';
+                    sh 'pwd';
+                    sh 'mvn clean package';
+                }
+
                 withCredentials([usernamePassword(credentialsId: 'bayrktlihn', usernameVariable: 'myUserName', passwordVariable: 'myPassword')]){ 
                     
                     sh 'echo $myUserName $myPassword';
