@@ -27,4 +27,5 @@
 # Install Linux Command
 - apt install iputils-ping
 - apt install wget
+- apt install net-tools
 
